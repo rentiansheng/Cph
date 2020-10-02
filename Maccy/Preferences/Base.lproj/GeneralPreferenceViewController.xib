@@ -29,9 +29,7 @@
                         <gridRow rowAlignment="firstBaseline" id="1lh-Qw-cAx"/>
                         <gridRow id="PHn-iI-jCM"/>
                         <gridRow id="cbV-VG-Q6m"/>
-                        <gridRow id="PS2-Rm-W1c"/>
-                        <gridRow id="g9F-gc-VeQ"/>
-                        <gridRow id="gQG-qR-qof"/>
+                        <gridRow yPlacement="center" height="14" id="gQG-qR-qof"/>
                         <gridRow id="4mM-7H-ZCH"/>
                         <gridRow id="Tu6-SU-k0p"/>
                         <gridRow id="UJH-vP-Sxs"/>
@@ -92,35 +90,9 @@ Default: ⇧⌘C.</string>
                                 </connections>
                             </button>
                         </gridCell>
-                        <gridCell row="PS2-Rm-W1c" column="vOJ-9h-G8Y" id="6em-dR-Ryv"/>
-                        <gridCell row="PS2-Rm-W1c" column="pQU-Pz-q1v" id="uFS-md-Wwd">
-                            <button key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxc-Pf-Ef9">
-                                <rect key="frame" x="81" y="312" width="222" height="18"/>
-                                <buttonCell key="cell" type="check" title="Check for updates automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="avb-QJ-T0h">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="NyN-Z6-SI8" name="value" keyPath="self.updater.automaticallyChecksForUpdates" id="7tG-Dp-gUR"/>
-                                </connections>
-                            </button>
-                        </gridCell>
-                        <gridCell row="g9F-gc-VeQ" column="vOJ-9h-G8Y" id="GcL-zo-cZI"/>
-                        <gridCell row="g9F-gc-VeQ" column="pQU-Pz-q1v" id="B7i-o2-8Af">
-                            <button key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ik8-mb-VoG">
-                                <rect key="frame" x="83" y="286" width="77" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Check now" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="8Rb-OS-d59">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="NyN-Z6-SI8" id="SZf-Uf-dKc"/>
-                                </connections>
-                            </button>
-                        </gridCell>
                         <gridCell row="gQG-qR-qof" column="vOJ-9h-G8Y" headOfMergedCell="8Tc-ki-XIw" xPlacement="fill" id="8Tc-ki-XIw">
                             <box key="contentView" verticalHuggingPriority="750" ambiguous="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="fMY-lL-A9Q">
-                                <rect key="frame" x="0.0" y="276" width="501" height="5"/>
+                                <rect key="frame" x="0.0" y="403" width="519" height="5"/>
                             </box>
                         </gridCell>
                         <gridCell row="gQG-qR-qof" column="pQU-Pz-q1v" headOfMergedCell="8Tc-ki-XIw" id="a3u-rN-xNI"/>
@@ -243,6 +215,5 @@ Default: ⇧⌘C.</string>
             </constraints>
             <point key="canvasLocation" x="190.5" y="165.5"/>
         </customView>
-        <customObject id="NyN-Z6-SI8" customClass="SPUStandardUpdaterController"/>
     </objects>
 </document>
