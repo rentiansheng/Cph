@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="IgnorePreferenceViewController" customModule="Maccy" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="IgnorePreferenceViewController" customModule="Cph" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="NB5-c9-ckl" id="2rT-S1-SUg"/>
             </connections>
@@ -48,7 +48,7 @@
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn editable="NO" width="437" minWidth="40" maxWidth="1000" id="e5t-lA-7er">
+                                                <tableColumn editable="NO" width="408" minWidth="40" maxWidth="1000" id="e5t-lA-7er">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Applications">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -61,7 +61,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="appCell" id="fhd-tK-2ds">
-                                                            <rect key="frame" x="1" y="0.0" width="446" height="34"/>
+                                                            <rect key="frame" x="1" y="0.0" width="417" height="34"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-F0-gSp">
@@ -72,7 +72,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="jpG-Mf-0lg"/>
                                                                 </imageView>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VfN-4U-S04">
-                                                                    <rect key="frame" x="34" y="9" width="390" height="16"/>
+                                                                    <rect key="frame" x="34" y="9" width="361" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="at1-VF-wpg">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -118,8 +118,8 @@
                             </scrollView>
                         </gridCell>
                         <gridCell row="ids-bw-eOR" column="gIK-wZ-lcb" xPlacement="leading" id="jtR-Tw-Hf6">
-                            <segmentedControl key="contentView" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyi-HD-6dB">
-                                <rect key="frame" x="0.0" y="328" width="451" height="23"/>
+                            <segmentedControl key="contentView" translatesAutoresizingMaskIntoConstraints="NO" id="iyi-HD-6dB">
+                                <rect key="frame" x="0.0" y="328" width="61" height="23"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fill" style="smallSquare" trackingMode="momentary" id="3q1-5O-D0G">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -163,7 +163,7 @@ Please note that the way it works is not bullet-proof, so it's better to use pas
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="437" minWidth="40" maxWidth="1000" id="PDj-Nr-Ubl">
+                                                <tableColumn width="408" minWidth="40" maxWidth="1000" id="PDj-Nr-Ubl">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Pasteboard types">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -198,7 +198,7 @@ Please note that the way it works is not bullet-proof, so it's better to use pas
                         </gridCell>
                         <gridCell row="2BD-jg-qTx" column="gIK-wZ-lcb" xPlacement="leading" id="E68-5x-6xu">
                             <segmentedControl key="contentView" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7Y-T3-0AJ">
-                                <rect key="frame" x="0.0" y="49" width="451" height="32"/>
+                                <rect key="frame" x="0.0" y="58" width="61" height="23"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fill" style="smallSquare" trackingMode="momentary" id="7OS-5Z-WDT">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -234,12 +234,12 @@ By default, some known application-specific types are defined. You can remove th
             </constraints>
             <point key="canvasLocation" x="286" y="150.5"/>
         </customView>
-        <viewController id="gYR-MN-G8y" customClass="IgnoreApplicationsViewController" customModule="Maccy" customModuleProvider="target">
+        <viewController id="gYR-MN-G8y" customClass="IgnoreApplicationsViewController" customModule="Cph" customModuleProvider="target">
             <connections>
                 <outlet property="ignoredItemsTable" destination="MMx-DY-4si" id="4pJ-bl-v5G"/>
             </connections>
         </viewController>
-        <viewController id="tgV-YG-Zdo" customClass="IgnorePasteboardTypesViewController" customModule="Maccy" customModuleProvider="target">
+        <viewController id="tgV-YG-Zdo" customClass="IgnorePasteboardTypesViewController" customModule="Cph" customModuleProvider="target">
             <connections>
                 <outlet property="ignoredItemsTable" destination="KN1-GZ-hcI" id="BZH-vc-qwC"/>
             </connections>

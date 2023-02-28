@@ -19,14 +19,14 @@ class FilterMenuItemView: NSView, NSTextFieldDelegate {
     if #available(macOS 11, *) {
       return "|-(==14)-[titleField]-[queryField]-(==14)-|"
     } else {
-      return "|-[titleField]-[queryField]-(==10)-|"
+      return "|-[titleField]-[queryField]-(==14)-|"
     }
   }()
   lazy private var horizontalSearchOnlyConstraint: String = {
     if #available(macOS 11, *) {
       return "|-(==14)-[queryField]-(==14)-|"
     } else {
-      return "|-(==10)-[queryField]-(==10)-|"
+      return "|-(==10)-[queryField]-(==14)-|"
     }
   }()
 
@@ -56,7 +56,7 @@ class FilterMenuItemView: NSView, NSTextFieldDelegate {
     field.isEditable = false
     field.isEnabled = false
     field.drawsBackground = false
-    field.font = .menuFont(ofSize: 15)
+    field.font = .menuFont(ofSize: 20)
     field.textColor = .disabledControlTextColor
     field.cell?.usesSingleLineMode = true
     return field
@@ -75,7 +75,7 @@ class FilterMenuItemView: NSView, NSTextFieldDelegate {
     field.bezelStyle = .roundedBezel
     field.delegate = self
     field.focusRingType = .none
-    field.font = .menuFont(ofSize: 13)
+    field.font = .menuFont(ofSize: 20)
     field.textColor = .disabledControlTextColor
     field.refusesFirstResponder = true
     field.cell?.usesSingleLineMode = true
@@ -115,6 +115,7 @@ class FilterMenuItemView: NSView, NSTextFieldDelegate {
   override func viewDidMoveToWindow() {
     super.viewDidMoveToWindow()
 
+
     if window != nil {
       if let dispatcher = GetEventDispatcherTarget() {
         // Create pointer to our event processer.
@@ -148,6 +149,7 @@ class FilterMenuItemView: NSView, NSTextFieldDelegate {
   }
 
   override func draw(_ dirtyRect: NSRect) {
+    self.frame.size.height = 42
     super.draw(dirtyRect)
     if NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast ||
        NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency {
@@ -159,12 +161,12 @@ class FilterMenuItemView: NSView, NSTextFieldDelegate {
 
   // Process query when search field was focused (i.e. user clicked on it).
   func controlTextDidChange(_ obj: Notification) {
-    fireNotification()
+     fireNotification()
   }
 
   // Switch to main window if Tab is pressed when search is focused.
   func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
-    if commandSelector == #selector(insertTab(_:)) {
+     if commandSelector == #selector(insertTab(_:)) {
       window?.makeFirstResponder(window)
       return true
     }
@@ -172,17 +174,18 @@ class FilterMenuItemView: NSView, NSTextFieldDelegate {
   }
 
   private func fireNotification() {
-    searchThrottler.throttle {
+     searchThrottler.throttle {
       self.customMenu?.updateFilter(filter: self.queryField.stringValue)
     }
   }
 
   private func setQuery(_ newQuery: String) {
-    guard queryField.stringValue != newQuery else {
+     guard queryField.stringValue != newQuery else {
       return
     }
 
     queryField.stringValue = newQuery
+
     fireNotification()
   }
 

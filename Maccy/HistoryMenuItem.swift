@@ -11,10 +11,11 @@ class HistoryMenuItem: NSMenuItem {
   private let imageMaxWidth: CGFloat = 340.0
 
   private let highlightFont: NSFont = {
+    // 筛选突出显示命中字体
     if #available(macOS 11, *) {
-      return NSFont.boldSystemFont(ofSize: 13)
+      return NSFont.boldSystemFont(ofSize: 18)
     } else {
-      return NSFont.boldSystemFont(ofSize: 14)
+      return NSFont.boldSystemFont(ofSize: 19)
     }
   }()
 
@@ -26,10 +27,10 @@ class HistoryMenuItem: NSMenuItem {
   }
 
   init(item: HistoryItem, clipboard: Clipboard) {
+
     UserDefaults.standard.register(defaults: [UserDefaults.Keys.imageMaxHeight: UserDefaults.Values.imageMaxHeight])
 
     super.init(title: "", action: #selector(onSelect(_:)), keyEquivalent: "")
-
     self.clipboard = clipboard
     self.item = item
     self.onStateImage = NSImage(named: "PinImage")

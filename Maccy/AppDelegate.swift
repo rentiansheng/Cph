@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     migrateUserDefaults()
-    clearOrphanRecords()
+      clearOrphanRecords()
 
     maccy = Maccy()
     hotKey = GlobalHotKey(maccy.popUp)

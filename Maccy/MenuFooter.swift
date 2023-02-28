@@ -8,7 +8,7 @@ enum MenuFooter: Int, CaseIterable {
   case about = 103
   case quit = 104
 
-  var menuItem: NSMenuItem {
+var menuItem: NSMenuItem {
     let item = self == .separator ? NSMenuItem.separator() : NSMenuItem()
     item.isAlternate = isAlternate && !UserDefaults.standard.hideFooter
     item.isHidden = UserDefaults.standard.hideFooter

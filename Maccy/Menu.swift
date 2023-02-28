@@ -4,6 +4,8 @@ import AppKit
 // Custom menu supporting "search-as-you-type" based on https://github.com/mikekazakov/MGKMenuWithFilter.
 // swiftlint:disable type_body_length
 class Menu: NSMenu, NSMenuDelegate {
+
+
   class IndexedItem: NSObject {
     var value: String
     var title: String { item.title }
@@ -18,7 +20,7 @@ class Menu: NSMenu, NSMenuDelegate {
   }
 
   public let maxHotKey = 9
-  public let menuWidth = 300
+  public let menuWidth = 400
 
   public var firstUnpinnedHistoryMenuItem: HistoryMenuItem? {
     historyMenuItems.first(where: { !$0.isPinned })
@@ -35,6 +37,7 @@ class Menu: NSMenu, NSMenuDelegate {
 
   private let historyMenuItemOffset = 1 // The first item is reserved for header.
   private let historyMenuItemsGroup = 3 // 1 main and 2 alternates
+ 
 
   private var clipboard: Clipboard!
   private var history: History!
@@ -54,7 +57,7 @@ class Menu: NSMenu, NSMenuDelegate {
   }
 
   private var maxMenuItems: Int { UserDefaults.standard.maxMenuItems }
-  private var maxVisibleItems: Int { maxMenuItems * historyMenuItemsGroup }
+  private var maxVisibleItems: Int { maxMenuItems * historyMenuItemsGroup}
 
   required init(coder decoder: NSCoder) {
     super.init(coder: decoder)
@@ -65,7 +68,8 @@ class Menu: NSMenu, NSMenuDelegate {
       UserDefaults.Keys.maxMenuItems: UserDefaults.Values.maxMenuItems
     ])
 
-    super.init(title: "Maccy")
+
+    super.init(title: "Cph")
 
     self.history = history
     self.clipboard = clipboard
@@ -103,6 +107,7 @@ class Menu: NSMenu, NSMenuDelegate {
     guard let menuItem = menuItems.first else {
       return
     }
+
     indexedItems.insert(IndexedItem(value: menuItem.value,
                                     item: item,
                                     menuItems: menuItems),
@@ -127,6 +132,8 @@ class Menu: NSMenu, NSMenuDelegate {
 
     clearRemovedItems()
   }
+
+
 
   func clearAll() {
     clear(indexedItems.flatMap({ $0.menuItems }))
@@ -173,9 +180,15 @@ class Menu: NSMenu, NSMenuDelegate {
       }
     }
 
+
     setKeyEquivalents(historyMenuItems)
     highlight(filter.isEmpty ? firstUnpinnedHistoryMenuItem : historyMenuItems.first)
-  }
+    // fix: 当展示的项目出现滚动条的时候，根据filter查询数据，删除字符后，
+    // 如果只有一个的项目，整个menu被折叠无法展示数据
+    if results.count <= 2 {
+      selectNext(alt: true)
+    }
+   }
 
   func select() {
     if let item = highlightedItem {

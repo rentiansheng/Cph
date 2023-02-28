@@ -7,12 +7,15 @@ class Maccy: NSObject {
   static public var returnFocusToPreviousApp = true
 
   @objc public let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-  private let statusItemTitleMaxLength = 20
+  private let statusItemTitleMaxLength = 10
 
   private let about = About()
   private let clipboard = Clipboard()
   private let history = History()
-  private var menu: Menu!
+  // 在屏幕中展示
+  private var cphHistoyMenu: Menu!
+  // 程序菜但是用，
+  private var menuBar: Menu!
   private var menuLoader: MenuLoader!
   private var window: NSWindow!
 
@@ -29,6 +32,8 @@ class Maccy: NSObject {
   private var extraVisibleWindows: [NSWindow] {
     return NSApp.windows.filter({ $0.isVisible && String(describing: type(of: $0)) != carbonMenuWindowClass })
   }
+    
+
 
   private lazy var preferencesWindowController = PreferencesWindowController(
     preferencePanes: [
@@ -42,7 +47,7 @@ class Maccy: NSObject {
   )
 
   private var filterMenuRect: NSRect {
-    return NSRect(x: 0, y: 0, width: menu.menuWidth, height: UserDefaults.standard.hideSearch ? 1 : 29)
+    return NSRect(x: 0, y: 0, width: cphHistoyMenu.menuWidth, height: UserDefaults.standard.hideSearch ? 1 : 15)
   }
 
   private var enabledPasteboardTypesObserver: NSKeyValueObservation?
@@ -64,7 +69,8 @@ class Maccy: NSObject {
     super.init()
     initializeObservers()
 
-    menu = Menu(history: history, clipboard: clipboard)
+    cphHistoyMenu = Menu(history: history, clipboard: clipboard)
+    menuBar = Menu(history: history, clipboard: clipboard)
     menuLoader = MenuLoader(performStatusItemClick)
     start()
   }
@@ -86,23 +92,23 @@ class Maccy: NSObject {
 
   func popUp() {
     withFocus {
-      switch UserDefaults.standard.popupPosition {
+       switch UserDefaults.standard.popupPosition {
       case "center":
         if let screen = NSScreen.main {
-          let topLeftX = (screen.frame.width - self.menu.size.width) / 2 + screen.frame.origin.x
-          var topLeftY = (screen.frame.height + self.menu.size.height) / 2 - screen.frame.origin.y
-          if screen.frame.height < self.menu.size.height {
+          let topLeftX = (screen.frame.width - self.cphHistoyMenu.size.width) / 2 + screen.frame.origin.x
+          var topLeftY = (screen.frame.height + self.cphHistoyMenu.size.height) / 2 - screen.frame.origin.y
+          if screen.frame.height < self.cphHistoyMenu.size.height {
             topLeftY = screen.frame.origin.y
           }
           self.linkingMenuToStatusItem {
-            self.menu.popUp(positioning: nil, at: NSPoint(x: topLeftX + 1.0, y: topLeftY + 1.0), in: nil)
+            self.cphHistoyMenu.popUp(positioning: nil, at: NSPoint(x: topLeftX + 1.0, y: topLeftY + 1.0), in: nil)
           }
         }
       case "statusItem":
         self.simulateStatusItemClick()
       default:
         self.linkingMenuToStatusItem {
-          self.menu.popUp(positioning: nil, at: NSEvent.mouseLocation, in: nil)
+          self.cphHistoyMenu.popUp(positioning: nil, at: NSEvent.mouseLocation, in: nil)
         }
       }
     }
@@ -110,6 +116,7 @@ class Maccy: NSObject {
 
   @objc
   func performStatusItemClick(_ event: NSEvent?) {
+      //  菜单栏展示
     if let event = event {
       if event.modifierFlags.intersection(.deviceIndependentFlagsMask) == .option {
         UserDefaults.standard.ignoreEvents = !UserDefaults.standard.ignoreEvents
@@ -134,7 +141,7 @@ class Maccy: NSObject {
     }
 
     clipboard.onNewCopy(history.add)
-    clipboard.onNewCopy(menu.add)
+    clipboard.onNewCopy(cphHistoyMenu.add)
     clipboard.onNewCopy(updateMenuTitle)
     clipboard.startListening()
 
@@ -147,18 +154,19 @@ class Maccy: NSObject {
 
   private func populateHeader() {
     let headerItemView = FilterMenuItemView(frame: filterMenuRect)
-    headerItemView.title = "Maccy"
+    // search textFile label name
+    headerItemView.title = ""
 
     let headerItem = NSMenuItem()
-    headerItem.title = "Maccy"
+    headerItem.title = ""
     headerItem.view = headerItemView
     headerItem.isEnabled = false
 
-    menu.addItem(headerItem)
+    cphHistoyMenu.addItem(headerItem)
   }
 
   private func populateItems() {
-    menu.buildItems()
+    cphHistoyMenu.buildItems()
     updateMenuTitle()
   }
 
@@ -166,8 +174,10 @@ class Maccy: NSObject {
     MenuFooter.allCases.map({ $0.menuItem }).forEach({ item in
       item.action = #selector(menuItemAction)
       item.target = self
-      menu.addItem(item)
+      menuBar.addItem(item)
     })
+
+
   }
 
   @objc
@@ -195,14 +205,14 @@ class Maccy: NSObject {
   func clearUnpinned(suppressClearAlert: Bool = false) {
     withClearAlert(suppressClearAlert: suppressClearAlert) {
       self.history.clearUnpinned()
-      self.menu.clearUnpinned()
+      self.cphHistoyMenu.clearUnpinned()
     }
   }
 
   private func clearAll(suppressClearAlert: Bool = false) {
     withClearAlert(suppressClearAlert: suppressClearAlert) {
       self.history.clear()
-      self.menu.clearAll()
+      self.cphHistoyMenu.clearAll()
     }
   }
 
@@ -221,12 +231,12 @@ class Maccy: NSObject {
   }
 
   private func rebuild() {
-    menu.clearAll()
-    menu.removeAllItems()
+    cphHistoyMenu.clearAll()
+    cphHistoyMenu.removeAllItems()
 
     populateHeader()
     populateItems()
-    populateFooter()
+    //populateFooter()
   }
 
   private func updateMenuTitle(_ item: HistoryItem? = nil) {
@@ -238,7 +248,7 @@ class Maccy: NSObject {
     var title = ""
     if let item = item {
       title = HistoryMenuItem(item: item, clipboard: clipboard).title
-    } else if let item = menu.firstUnpinnedHistoryMenuItem {
+    } else if let item = cphHistoyMenu.firstUnpinnedHistoryMenuItem {
       title = item.title
     }
 
@@ -267,9 +277,10 @@ class Maccy: NSObject {
   }
 
   private func linkingMenuToStatusItem(_ closure: @escaping () -> Void) {
-    statusItem.menu = menu
+    statusItem.menu = menuBar
     closure()
     statusItem.menu = menuLoader
+
   }
 
   // Executes closure with application focus (pun intended).
@@ -337,7 +348,7 @@ class Maccy: NSObject {
       self.updateStatusItemEnabledness()
     }
     imageHeightObserver = UserDefaults.standard.observe(\.imageMaxHeight, options: .new) { _, _ in
-      self.menu.resizeImageMenuItems()
+      self.cphHistoyMenu.resizeImageMenuItems()
     }
     hideFooterObserver = UserDefaults.standard.observe(\.hideFooter, options: .new) { _, _ in
       self.rebuild()

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="AppearancePreferenceViewController" customModule="Maccy" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="AppearancePreferenceViewController" customModule="Cph" customModuleProvider="target">
             <connections>
                 <outlet property="imageHeightLabel" destination="uwx-8S-ZG3" id="Zu8-f0-Q4n"/>
                 <outlet property="imageHeightSlider" destination="fDO-zN-OAg" id="Dqu-5j-0nP"/>
@@ -210,7 +210,7 @@ Default: 0.</string>
                         </gridCell>
                         <gridCell row="OdT-ff-FSd" column="KLa-7P-lgK" headOfMergedCell="OeY-HC-jSl" xPlacement="fill" id="OeY-HC-jSl">
                             <box key="contentView" verticalHuggingPriority="750" ambiguous="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-B5-SQV">
-                                <rect key="frame" x="0.0" y="148" width="465" height="5"/>
+                                <rect key="frame" x="0.0" y="147" width="465" height="5"/>
                             </box>
                         </gridCell>
                         <gridCell row="OdT-ff-FSd" column="7OC-Fv-eMr" headOfMergedCell="OeY-HC-jSl" id="fe5-7h-IxP"/>
