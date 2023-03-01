@@ -78,6 +78,8 @@ class Maccy: NSObject {
     menu.appearance = NSAppearance(named: .darkAqua)
 
     menuBar = Menu(history: History(), clipboard: Clipboard.shared)
+    menuBar.appearance = NSAppearance(named: .darkAqua)
+
     menuLoader = MenuLoader(performStatusItemClick)
     start()
   }
