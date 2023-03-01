@@ -28,3 +28,5 @@
 "key_used_error" = "快速鍵已被使用。";
 "active_screen" = "活動螢幕";
 "screen" = "螢幕";
+"search_no_match_result" = "沒有匹配結果";
+

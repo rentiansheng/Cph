@@ -8,6 +8,90 @@
 
 /* Begin PBXBuildFile section */
 		4762D6972467226100B3A2BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4762D6992467226100B3A2BA /* Localizable.strings */; };
+		A17057A529AE44D50005CA20 /* SelectIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA68F91B28BD76B8007E2F25 /* SelectIntentHandler.swift */; };
+		A17057A629AE44D50005CA20 /* AppearancePreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA043DDF247D171C00488756 /* AppearancePreferenceViewController.swift */; };
+		A17057A729AE44D50005CA20 /* GlobalHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DB59620AA7D55003C255E /* GlobalHotKey.swift */; };
+		A17057A829AE44D50005CA20 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DA68F91728BD6E21007E2F25 /* Intents.intentdefinition */; };
+		A17057A929AE44D50005CA20 /* MenuLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11AE952693DD7100D640D2 /* MenuLoader.swift */; };
+		A17057AA29AE44D50005CA20 /* KeyChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD665652898A1C000975096 /* KeyChord.swift */; };
+		A17057AB29AE44D50005CA20 /* GetIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83EC252974EEA400A95531 /* GetIntentHandler.swift */; };
+		A17057AC29AE44D50005CA20 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE38531E3DD6F100DD2966 /* History.swift */; };
+		A17057AD29AE44D50005CA20 /* NSPasteboard.PasteboardType+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC929D6297A0E8B00814F19 /* NSPasteboard.PasteboardType+Types.swift */; };
+		A17057AE29AE44D50005CA20 /* IgnorePasteboardTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20EBAF268E253E0032D360 /* IgnorePasteboardTypesViewController.swift */; };
+		A17057AF29AE44D50005CA20 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19F18D2984943E0091F26C /* Preview.swift */; };
+		A17057B029AE44D50005CA20 /* PasteMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF65F4624D396FE00F3978F /* PasteMenuItem.swift */; };
+		A17057B129AE44D50005CA20 /* MenuFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57C64D249E2A550032707A /* MenuFooter.swift */; };
+		A17057B229AE44D50005CA20 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB65DFE2440AE29000AECA8 /* CoreDataManager.swift */; };
+		A17057B329AE44D50005CA20 /* UserDefaults+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B0AF1234201E500EFAD72 /* UserDefaults+Configuration.swift */; };
+		A17057B429AE44D50005CA20 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0EF1871E444B2A00E58577 /* Clipboard.swift */; };
+		A17057B529AE44D50005CA20 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA18116E247B405B00066D55 /* GeneralPreferenceViewController.swift */; };
+		A17057B629AE44D50005CA20 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAEB195219694AE00A7883C /* About.swift */; };
+		A17057B729AE44D50005CA20 /* KeyboardShortcuts.Name+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFEF0B7249D7DEE006029E8 /* KeyboardShortcuts.Name+Popup.swift */; };
+		A17057B829AE44D50005CA20 /* HistoryItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB65E0C2440B0D4000AECA8 /* HistoryItemContent.swift */; };
+		A17057B929AE44D50005CA20 /* Sorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA696BCD240177E800DE80CF /* Sorter.swift */; };
+		A17057BA29AE44D50005CA20 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDE97E2974706C005B32E9 /* KeyboardLayout.swift */; };
+		A17057BB29AE44D50005CA20 /* NSRunningApplication+WindowFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49EE7828B594DC002752E0 /* NSRunningApplication+WindowFrame.swift */; };
+		A17057BC29AE44D50005CA20 /* NSScreen+ForPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6491AF29ABCF2400837D93 /* NSScreen+ForPopup.swift */; };
+		A17057BD29AE44D50005CA20 /* PasteWithoutFormattingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF65F4524D396FE00F3978F /* PasteWithoutFormattingMenuItem.swift */; };
+		A17057BE29AE44D50005CA20 /* PinsPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE2DD72688018100990986 /* PinsPreferenceViewController.swift */; };
+		A17057BF29AE44D50005CA20 /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA81D673252A056B009977BC /* Throttler.swift */; };
+		A17057C029AE44D50005CA20 /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA196A9228AB0D4500ADD8A2 /* MenuHeaderView.swift */; };
+		A17057C129AE44D50005CA20 /* HistoryMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA573EAC1EDD410F00561FB2 /* HistoryMenuItem.swift */; };
+		A17057C229AE44D50005CA20 /* PreviewMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19F18929847FF00091F26C /* PreviewMenuItem.swift */; };
+		A17057C329AE44D50005CA20 /* PinComboBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B0FD5289DFEA200E641BE /* PinComboBoxCell.swift */; };
+		A17057C429AE44D50005CA20 /* StoragePreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DF95127AF8BBA006839E0 /* StoragePreferenceViewController.swift */; };
+		A17057C529AE44D50005CA20 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2C752B2029FE990090965D /* Menu.swift */; };
+		A17057C629AE44D50005CA20 /* IgnorePreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35278B268D645700C92EBB /* IgnorePreferenceViewController.swift */; };
+		A17057C729AE44D50005CA20 /* AdvancedPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA181172247B409A00066D55 /* AdvancedPreferenceViewController.swift */; };
+		A17057C829AE44D50005CA20 /* IgnoreApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20EBB1268E279F0032D360 /* IgnoreApplicationsViewController.swift */; };
+		A17057C929AE44D50005CA20 /* NSRect+Centered.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49EE7428B59468002752E0 /* NSRect+Centered.swift */; };
+		A17057CA29AE44D50005CA20 /* CopyMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF65F4724D396FE00F3978F /* CopyMenuItem.swift */; };
+		A17057CB29AE44D50005CA20 /* Maccy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8953B81E446A4E00884EAB /* Maccy.swift */; };
+		A17057CC29AE44D50005CA20 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB65E0A2440B078000AECA8 /* HistoryItem.swift */; };
+		A17057CD29AE44D50005CA20 /* ClearIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA68F91D28BD7DEA007E2F25 /* ClearIntentHandler.swift */; };
+		A17057CE29AE44D50005CA20 /* String+Shortened.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE2DD9268A521A00990986 /* String+Shortened.swift */; };
+		A17057CF29AE44D50005CA20 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC14123232367B200FCFA30 /* Search.swift */; };
+		A17057D029AE44D50005CA20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE38461E3DBEB100DD2966 /* AppDelegate.swift */; };
+		A17057D129AE44D50005CA20 /* PreferencePane.Identifier+Panes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA181176247D14DA00066D55 /* PreferencePane.Identifier+Panes.swift */; };
+		A17057D229AE44D50005CA20 /* ColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE284FF232257D20080E394 /* ColorImage.swift */; };
+		A17057D329AE44D50005CA20 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA196A8E28AB0A6800ADD8A2 /* MenuHeader.swift */; };
+		A17057D429AE44D50005CA20 /* NSImage+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A753D26A52F0F00DC16EF /* NSImage+Names.swift */; };
+		A17057D529AE44D50005CA20 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAB65DFB2440AD63000AECA8 /* Storage.xcdatamodeld */; };
+		A17057D729AE44D50005CA20 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = A170579829AE44D50005CA20 /* Preferences */; };
+		A17057D829AE44D50005CA20 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = A17057A029AE44D50005CA20 /* KeyboardShortcuts */; };
+		A17057D929AE44D50005CA20 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F464F2020E4DF00425C11 /* Carbon.framework */; };
+		A17057DA29AE44D50005CA20 /* SwiftHEXColors in Frameworks */ = {isa = PBXBuildFile; productRef = A170579E29AE44D50005CA20 /* SwiftHEXColors */; };
+		A17057DB29AE44D50005CA20 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD20C7424E55CD100E96247 /* Sparkle.framework */; };
+		A17057DC29AE44D50005CA20 /* Sauce in Frameworks */ = {isa = PBXBuildFile; productRef = A170579A29AE44D50005CA20 /* Sauce */; };
+		A17057DD29AE44D50005CA20 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A17057A229AE44D50005CA20 /* LaunchAtLogin */; };
+		A17057DE29AE44D50005CA20 /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = A170579C29AE44D50005CA20 /* Fuse */; };
+		A17057E029AE44D50005CA20 /* PinsPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFE2DDD268A8E4E00990986 /* PinsPreferenceViewController.xib */; };
+		A17057E129AE44D50005CA20 /* org.sparkle-project.InstallerConnection.xpc in Resources */ = {isa = PBXBuildFile; fileRef = DAD20C7624E55CD200E96247 /* org.sparkle-project.InstallerConnection.xpc */; };
+		A17057E229AE44D50005CA20 /* org.sparkle-project.Downloader.xpc in Resources */ = {isa = PBXBuildFile; fileRef = DAD20C7224E55CD100E96247 /* org.sparkle-project.Downloader.xpc */; };
+		A17057E329AE44D50005CA20 /* org.sparkle-project.InstallerStatus.xpc in Resources */ = {isa = PBXBuildFile; fileRef = DAD20C7324E55CD100E96247 /* org.sparkle-project.InstallerStatus.xpc */; };
+		A17057E429AE44D50005CA20 /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA05E7CE2483EF83005CB8AA /* GeneralPreferenceViewController.xib */; };
+		A17057E529AE44D50005CA20 /* IgnorePreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA20EBB7268E54E80032D360 /* IgnorePreferenceViewController.xib */; };
+		A17057E629AE44D50005CA20 /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB8CE4124E368F200A2500E /* container-migration.plist */; };
+		A17057E729AE44D50005CA20 /* org.sparkle-project.InstallerLauncher.xpc in Resources */ = {isa = PBXBuildFile; fileRef = DAD20C7524E55CD200E96247 /* org.sparkle-project.InstallerLauncher.xpc */; };
+		A17057E829AE44D50005CA20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6373971E4AB9BB00263391 /* Assets.xcassets */; };
+		A17057E929AE44D50005CA20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4762D6992467226100B3A2BA /* Localizable.strings */; };
+		A17057EA29AE44D50005CA20 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DA00992F256411F90030E697 /* LICENSE */; };
+		A17057EB29AE44D50005CA20 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = DA00992C256411F90030E697 /* appcast.xml */; };
+		A17057EC29AE44D50005CA20 /* AppearancePreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA05E7D42483F70B005CB8AA /* AppearancePreferenceViewController.xib */; };
+		A17057ED29AE44D50005CA20 /* knock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA21AD43249E86F0003E7C98 /* knock.mp3 */; };
+		A17057EE29AE44D50005CA20 /* Preview.xib in Resources */ = {isa = PBXBuildFile; fileRef = DADBA9602985C7AA00EC46FB /* Preview.xib */; };
+		A17057EF29AE44D50005CA20 /* write.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA21AD41249E86E8003E7C98 /* write.mp3 */; };
+		A17057F029AE44D50005CA20 /* StoragePreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1DF95327AF8BCD006839E0 /* StoragePreferenceViewController.xib */; };
+		A17057F129AE44D50005CA20 /* MenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA196A8F28AB0A6800ADD8A2 /* MenuHeader.xib */; };
+		A17057F229AE44D50005CA20 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA00992D256411F90030E697 /* README.md */; };
+		A17057F329AE44D50005CA20 /* AdvancedPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA05E7D92483F988005CB8AA /* AdvancedPreferenceViewController.xib */; };
+		A17057F429AE44D50005CA20 /* Vagrantfile in Resources */ = {isa = PBXBuildFile; fileRef = DA00992E256411F90030E697 /* Vagrantfile */; };
+		A17057F529AE44D50005CA20 /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA246D601E56C9EA001E40F3 /* Application.xib */; };
+		A17057F829AE44D50005CA20 /* Sparkle.framework in Copy Sparkle */ = {isa = PBXBuildFile; fileRef = DAD20C7424E55CD100E96247 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A17057FA29AE44D50005CA20 /* org.sparkle-project.Downloader.xpc in Embed Sparkle XPC Services */ = {isa = PBXBuildFile; fileRef = DAD20C7224E55CD100E96247 /* org.sparkle-project.Downloader.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A17057FB29AE44D50005CA20 /* org.sparkle-project.InstallerConnection.xpc in Embed Sparkle XPC Services */ = {isa = PBXBuildFile; fileRef = DAD20C7624E55CD200E96247 /* org.sparkle-project.InstallerConnection.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A17057FC29AE44D50005CA20 /* org.sparkle-project.InstallerLauncher.xpc in Embed Sparkle XPC Services */ = {isa = PBXBuildFile; fileRef = DAD20C7524E55CD200E96247 /* org.sparkle-project.InstallerLauncher.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A17057FD29AE44D50005CA20 /* org.sparkle-project.InstallerStatus.xpc in Embed Sparkle XPC Services */ = {isa = PBXBuildFile; fileRef = DAD20C7324E55CD100E96247 /* org.sparkle-project.InstallerStatus.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DA009931256411F90030E697 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = DA00992C256411F90030E697 /* appcast.xml */; };
 		DA009932256411F90030E697 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA00992D256411F90030E697 /* README.md */; };
 		DA009933256411F90030E697 /* Vagrantfile in Resources */ = {isa = PBXBuildFile; fileRef = DA00992E256411F90030E697 /* Vagrantfile */; };
@@ -123,6 +207,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A17057F729AE44D50005CA20 /* Copy Sparkle */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A17057F829AE44D50005CA20 /* Sparkle.framework in Copy Sparkle */,
+			);
+			name = "Copy Sparkle";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A17057F929AE44D50005CA20 /* Embed Sparkle XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				A17057FA29AE44D50005CA20 /* org.sparkle-project.Downloader.xpc in Embed Sparkle XPC Services */,
+				A17057FB29AE44D50005CA20 /* org.sparkle-project.InstallerConnection.xpc in Embed Sparkle XPC Services */,
+				A17057FC29AE44D50005CA20 /* org.sparkle-project.InstallerLauncher.xpc in Embed Sparkle XPC Services */,
+				A17057FD29AE44D50005CA20 /* org.sparkle-project.InstallerStatus.xpc in Embed Sparkle XPC Services */,
+			);
+			name = "Embed Sparkle XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAA8D3D524E44F2E00A08026 /* Embed Sparkle XPC Services */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,6 +291,8 @@
 		7CEEFDEF24F41F8500ECAD2A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppearancePreferenceViewController.strings"; sourceTree = "<group>"; };
 		7CEEFDF024F41F8500ECAD2A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GeneralPreferenceViewController.strings"; sourceTree = "<group>"; };
 		7CEEFDF124F41F8500ECAD2A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A170580129AE44D50005CA20 /* Cph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A170580229AE44D50005CA20 /* Maccy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Maccy copy-Info.plist"; path = "/Users/tiansheng.ren/git/Maccy/Maccy copy-Info.plist"; sourceTree = "<absolute>"; };
 		ABC7285D283A9052001EE086 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/AdvancedPreferenceViewController.strings; sourceTree = "<group>"; };
 		ABC7285E283A9052001EE086 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/AppearancePreferenceViewController.strings; sourceTree = "<group>"; };
 		ABC7285F283A9052001EE086 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/GeneralPreferenceViewController.strings; sourceTree = "<group>"; };
@@ -364,6 +475,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A17057D629AE44D50005CA20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A17057D729AE44D50005CA20 /* Preferences in Frameworks */,
+				A17057D829AE44D50005CA20 /* KeyboardShortcuts in Frameworks */,
+				A17057D929AE44D50005CA20 /* Carbon.framework in Frameworks */,
+				A17057DA29AE44D50005CA20 /* SwiftHEXColors in Frameworks */,
+				A17057DB29AE44D50005CA20 /* Sparkle.framework in Frameworks */,
+				A17057DC29AE44D50005CA20 /* Sauce in Frameworks */,
+				A17057DD29AE44D50005CA20 /* LaunchAtLogin in Frameworks */,
+				A17057DE29AE44D50005CA20 /* Fuse in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA0EE7B3204657830025FC60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,6 +650,7 @@
 				DA0EE7B7204657830025FC60 /* MaccyUITests */,
 				DAEE38441E3DBEB100DD2966 /* Products */,
 				C2D16D1C2EE365D52E1EE446 /* Frameworks */,
+				A170580229AE44D50005CA20 /* Maccy copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -533,6 +660,7 @@
 				DAEE38431E3DBEB100DD2966 /* Maccy.app */,
 				DA360DB01E3DF137005C6F6B /* MaccyTests.xctest */,
 				DA0EE7B6204657830025FC60 /* MaccyUITests.xctest */,
+				A170580129AE44D50005CA20 /* Cph.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -599,6 +727,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A170579729AE44D50005CA20 /* Cph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A17057FE29AE44D50005CA20 /* Build configuration list for PBXNativeTarget "Cph" */;
+			buildPhases = (
+				A17057A429AE44D50005CA20 /* Sources */,
+				A17057D629AE44D50005CA20 /* Frameworks */,
+				A17057DF29AE44D50005CA20 /* Resources */,
+				A17057F629AE44D50005CA20 /* Copy Launch at Login Helper */,
+				A17057F729AE44D50005CA20 /* Copy Sparkle */,
+				A17057F929AE44D50005CA20 /* Embed Sparkle XPC Services */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cph;
+			packageProductDependencies = (
+				A170579829AE44D50005CA20 /* Preferences */,
+				A170579A29AE44D50005CA20 /* Sauce */,
+				A170579C29AE44D50005CA20 /* Fuse */,
+				A170579E29AE44D50005CA20 /* SwiftHEXColors */,
+				A17057A029AE44D50005CA20 /* KeyboardShortcuts */,
+				A17057A229AE44D50005CA20 /* LaunchAtLogin */,
+			);
+			productName = Maccy;
+			productReference = A170580129AE44D50005CA20 /* Cph.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DA0EE7B5204657830025FC60 /* MaccyUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA0EE7BF204657840025FC60 /* Build configuration list for PBXNativeTarget "MaccyUITests" */;
@@ -669,6 +825,9 @@
 		DAEE383B1E3DBEB100DD2966 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = p0deje;
@@ -733,11 +892,41 @@
 				DAEE38421E3DBEB100DD2966 /* Maccy */,
 				DA360DAF1E3DF137005C6F6B /* MaccyTests */,
 				DA0EE7B5204657830025FC60 /* MaccyUITests */,
+				A170579729AE44D50005CA20 /* Cph */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A17057DF29AE44D50005CA20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A17057E029AE44D50005CA20 /* PinsPreferenceViewController.xib in Resources */,
+				A17057E129AE44D50005CA20 /* org.sparkle-project.InstallerConnection.xpc in Resources */,
+				A17057E229AE44D50005CA20 /* org.sparkle-project.Downloader.xpc in Resources */,
+				A17057E329AE44D50005CA20 /* org.sparkle-project.InstallerStatus.xpc in Resources */,
+				A17057E429AE44D50005CA20 /* GeneralPreferenceViewController.xib in Resources */,
+				A17057E529AE44D50005CA20 /* IgnorePreferenceViewController.xib in Resources */,
+				A17057E629AE44D50005CA20 /* container-migration.plist in Resources */,
+				A17057E729AE44D50005CA20 /* org.sparkle-project.InstallerLauncher.xpc in Resources */,
+				A17057E829AE44D50005CA20 /* Assets.xcassets in Resources */,
+				A17057E929AE44D50005CA20 /* Localizable.strings in Resources */,
+				A17057EA29AE44D50005CA20 /* LICENSE in Resources */,
+				A17057EB29AE44D50005CA20 /* appcast.xml in Resources */,
+				A17057EC29AE44D50005CA20 /* AppearancePreferenceViewController.xib in Resources */,
+				A17057ED29AE44D50005CA20 /* knock.mp3 in Resources */,
+				A17057EE29AE44D50005CA20 /* Preview.xib in Resources */,
+				A17057EF29AE44D50005CA20 /* write.mp3 in Resources */,
+				A17057F029AE44D50005CA20 /* StoragePreferenceViewController.xib in Resources */,
+				A17057F129AE44D50005CA20 /* MenuHeader.xib in Resources */,
+				A17057F229AE44D50005CA20 /* README.md in Resources */,
+				A17057F329AE44D50005CA20 /* AdvancedPreferenceViewController.xib in Resources */,
+				A17057F429AE44D50005CA20 /* Vagrantfile in Resources */,
+				A17057F529AE44D50005CA20 /* Application.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA0EE7B4204657830025FC60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -784,6 +973,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A17057F629AE44D50005CA20 /* Copy Launch at Login Helper */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Launch at Login Helper";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
 		DAC6CE9226E1AC2C002B70B8 /* Copy Launch at Login Helper */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -806,6 +1014,62 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A17057A429AE44D50005CA20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A17057A529AE44D50005CA20 /* SelectIntentHandler.swift in Sources */,
+				A17057A629AE44D50005CA20 /* AppearancePreferenceViewController.swift in Sources */,
+				A17057A729AE44D50005CA20 /* GlobalHotKey.swift in Sources */,
+				A17057A829AE44D50005CA20 /* Intents.intentdefinition in Sources */,
+				A17057A929AE44D50005CA20 /* MenuLoader.swift in Sources */,
+				A17057AA29AE44D50005CA20 /* KeyChord.swift in Sources */,
+				A17057AB29AE44D50005CA20 /* GetIntentHandler.swift in Sources */,
+				A17057AC29AE44D50005CA20 /* History.swift in Sources */,
+				A17057AD29AE44D50005CA20 /* NSPasteboard.PasteboardType+Types.swift in Sources */,
+				A17057AE29AE44D50005CA20 /* IgnorePasteboardTypesViewController.swift in Sources */,
+				A17057AF29AE44D50005CA20 /* Preview.swift in Sources */,
+				A17057B029AE44D50005CA20 /* PasteMenuItem.swift in Sources */,
+				A17057B129AE44D50005CA20 /* MenuFooter.swift in Sources */,
+				A17057B229AE44D50005CA20 /* CoreDataManager.swift in Sources */,
+				A17057B329AE44D50005CA20 /* UserDefaults+Configuration.swift in Sources */,
+				A17057B429AE44D50005CA20 /* Clipboard.swift in Sources */,
+				A17057B529AE44D50005CA20 /* GeneralPreferenceViewController.swift in Sources */,
+				A17057B629AE44D50005CA20 /* About.swift in Sources */,
+				A17057B729AE44D50005CA20 /* KeyboardShortcuts.Name+Popup.swift in Sources */,
+				A17057B829AE44D50005CA20 /* HistoryItemContent.swift in Sources */,
+				A17057B929AE44D50005CA20 /* Sorter.swift in Sources */,
+				A17057BA29AE44D50005CA20 /* KeyboardLayout.swift in Sources */,
+				A17057BB29AE44D50005CA20 /* NSRunningApplication+WindowFrame.swift in Sources */,
+				A17057BC29AE44D50005CA20 /* NSScreen+ForPopup.swift in Sources */,
+				A17057BD29AE44D50005CA20 /* PasteWithoutFormattingMenuItem.swift in Sources */,
+				A17057BE29AE44D50005CA20 /* PinsPreferenceViewController.swift in Sources */,
+				A17057BF29AE44D50005CA20 /* Throttler.swift in Sources */,
+				A17057C029AE44D50005CA20 /* MenuHeaderView.swift in Sources */,
+				A17057C129AE44D50005CA20 /* HistoryMenuItem.swift in Sources */,
+				A17057C229AE44D50005CA20 /* PreviewMenuItem.swift in Sources */,
+				A17057C329AE44D50005CA20 /* PinComboBoxCell.swift in Sources */,
+				A17057C429AE44D50005CA20 /* StoragePreferenceViewController.swift in Sources */,
+				A17057C529AE44D50005CA20 /* Menu.swift in Sources */,
+				A17057C629AE44D50005CA20 /* IgnorePreferenceViewController.swift in Sources */,
+				A17057C729AE44D50005CA20 /* AdvancedPreferenceViewController.swift in Sources */,
+				A17057C829AE44D50005CA20 /* IgnoreApplicationsViewController.swift in Sources */,
+				A17057C929AE44D50005CA20 /* NSRect+Centered.swift in Sources */,
+				A17057CA29AE44D50005CA20 /* CopyMenuItem.swift in Sources */,
+				A17057CB29AE44D50005CA20 /* Maccy.swift in Sources */,
+				A17057CC29AE44D50005CA20 /* HistoryItem.swift in Sources */,
+				A17057CD29AE44D50005CA20 /* ClearIntentHandler.swift in Sources */,
+				A17057CE29AE44D50005CA20 /* String+Shortened.swift in Sources */,
+				A17057CF29AE44D50005CA20 /* Search.swift in Sources */,
+				A17057D029AE44D50005CA20 /* AppDelegate.swift in Sources */,
+				A17057D129AE44D50005CA20 /* PreferencePane.Identifier+Panes.swift in Sources */,
+				A17057D229AE44D50005CA20 /* ColorImage.swift in Sources */,
+				A17057D329AE44D50005CA20 /* MenuHeader.swift in Sources */,
+				A17057D429AE44D50005CA20 /* NSImage+Names.swift in Sources */,
+				A17057D529AE44D50005CA20 /* Storage.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA0EE7B2204657830025FC60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1091,6 +1355,75 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A17057FF29AE44D50005CA20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Maccy/Maccy.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 5AD63Q85DH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle",
+				);
+				INFOPLIST_FILE = Maccy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 0.25.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.p0deje.Maccy.rentiansheng;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A170580029AE44D50005CA20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Maccy/Maccy.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 5AD63Q85DH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle",
+				);
+				INFOPLIST_FILE = Maccy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 0.25.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.p0deje.Maccy.rentiansheng;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		DA0EE7BD204657840025FC60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1316,11 +1649,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Maccy/Maccy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = MN3X4648SC;
+				DEVELOPMENT_TEAM = 5AD63Q85DH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1350,11 +1684,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Maccy/Maccy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = MN3X4648SC;
+				DEVELOPMENT_TEAM = 5AD63Q85DH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1378,6 +1713,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A17057FE29AE44D50005CA20 /* Build configuration list for PBXNativeTarget "Cph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A17057FF29AE44D50005CA20 /* Debug */,
+				A170580029AE44D50005CA20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DA0EE7BF204657840025FC60 /* Build configuration list for PBXNativeTarget "MaccyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1417,6 +1761,54 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A170579929AE44D50005CA20 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+		A170579B29AE44D50005CA20 /* XCRemoteSwiftPackageReference "Sauce" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Clipy/Sauce";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+		A170579D29AE44D50005CA20 /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krisk/fuse-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+		A170579F29AE44D50005CA20 /* XCRemoteSwiftPackageReference "SwiftHEXColors" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thii/SwiftHEXColors";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+		A17057A129AE44D50005CA20 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		A17057A329AE44D50005CA20 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		DA00993E256414560030E697 /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krisk/fuse-swift";
@@ -1468,6 +1860,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A170579829AE44D50005CA20 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A170579929AE44D50005CA20 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+		A170579A29AE44D50005CA20 /* Sauce */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A170579B29AE44D50005CA20 /* XCRemoteSwiftPackageReference "Sauce" */;
+			productName = Sauce;
+		};
+		A170579C29AE44D50005CA20 /* Fuse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A170579D29AE44D50005CA20 /* XCRemoteSwiftPackageReference "fuse-swift" */;
+			productName = Fuse;
+		};
+		A170579E29AE44D50005CA20 /* SwiftHEXColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A170579F29AE44D50005CA20 /* XCRemoteSwiftPackageReference "SwiftHEXColors" */;
+			productName = SwiftHEXColors;
+		};
+		A17057A029AE44D50005CA20 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A17057A129AE44D50005CA20 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+		A17057A229AE44D50005CA20 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A17057A329AE44D50005CA20 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
 		DA00993F256414560030E697 /* Fuse */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DA00993E256414560030E697 /* XCRemoteSwiftPackageReference "fuse-swift" */;

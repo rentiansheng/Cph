@@ -28,3 +28,4 @@
 "key_used_error" = "Düğme, halihazırda kullanılıyor.";
 "active_screen" = "Aktif ekran";
 "screen" = "Ekran";
+"search_no_match_result" = "No match result";

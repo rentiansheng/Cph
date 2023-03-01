@@ -28,3 +28,4 @@
 "key_used_error" = "Клавіша вже використовується.";
 "active_screen" = "Активний екран";
 "screen" = "Екран";
+"search_no_match_result" = "No match result";

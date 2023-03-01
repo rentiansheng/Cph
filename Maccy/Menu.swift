@@ -64,17 +64,21 @@ class Menu: NSMenu, NSMenuDelegate {
   private var maxMenuItems: Int { UserDefaults.standard.maxMenuItems }
   private var maxVisibleItems: Int { maxMenuItems * historyMenuItemsGroup }
 
+  private var noMatchResultMunuItem: NSMenuItem!
+
+
+
   required init(coder decoder: NSCoder) {
     super.init(coder: decoder)
   }
 
   init(history: History, clipboard: Clipboard) {
     super.init(title: "Maccy")
-
     self.history = history
     self.clipboard = clipboard
     self.delegate = self
     self.minimumWidth = CGFloat(Menu.menuWidth)
+    self.noMatchResultMunuItem = NSMenuItem()
   }
 
   func menuWillOpen(_ menu: NSMenu) {
@@ -226,7 +230,20 @@ class Menu: NSMenu, NSMenuDelegate {
 
     setKeyEquivalents(historyMenuItems)
     highlight(filter.isEmpty ? firstUnpinnedHistoryMenuItem : historyMenuItems.first)
+    // fix: 当展示的项目出现滚动条的时候，根据filter查询数据，删除字符后，
+     // 如果只有一个的项目，整个menu被折叠无法展示数据
+    if results.isEmpty    {
+      if  self.items.count == 1 {
+        noMatchResultMunuItem.title = NSLocalizedString("search_no_match_result", comment: "")
+        noMatchResultMunuItem.isEnabled = false
+        self.safeAddItem( noMatchResultMunuItem)
+      }
+
+    } else {
+      self.safeRemoveItem( noMatchResultMunuItem)
+    }
   }
+
 
   func select(_ searchQuery: String) {
     if let item = highlightedItem {

@@ -16,6 +16,7 @@ class Maccy: NSObject {
   private let clipboard = Clipboard.shared
   private let history = History()
   private var menu: Menu!
+  private var menuBar: Menu!
   private var menuLoader: MenuLoader!
   private var window: NSWindow!
 
@@ -43,7 +44,6 @@ class Maccy: NSObject {
       AdvancedPreferenceViewController()
     ]
   )
-
   private var enabledPasteboardTypesObserver: NSKeyValueObservation?
   private var ignoreEventsObserver: NSKeyValueObservation?
   private var imageHeightObserver: NSKeyValueObservation?
@@ -59,6 +59,9 @@ class Maccy: NSObject {
   private var statusItemConfigurationObserver: NSKeyValueObservation?
   private var statusItemVisibilityObserver: NSKeyValueObservation?
 
+
+
+
   override init() {
     UserDefaults.standard.register(defaults: [
       UserDefaults.Keys.imageMaxHeight: UserDefaults.Values.imageMaxHeight,
@@ -72,6 +75,7 @@ class Maccy: NSObject {
     initializeObservers()
 
     menu = Menu(history: history, clipboard: Clipboard.shared)
+    menuBar = Menu(history: History(), clipboard: Clipboard.shared)
     menuLoader = MenuLoader(performStatusItemClick)
     start()
   }
@@ -101,7 +105,7 @@ class Maccy: NSObject {
       case "center":
         if let frame = NSScreen.forPopup?.visibleFrame {
           self.linkingMenuToStatusItem {
-            self.menu.popUp(positioning: nil, at: NSRect.centered(ofSize: self.menu.size, in: frame).origin, in: nil)
+             self.menu.popUp(positioning: nil, at: NSRect.centered(ofSize: self.menu.size, in: frame).origin, in: nil)
           }
         }
       case "statusItem":
@@ -186,7 +190,7 @@ class Maccy: NSObject {
     let headerItem = NSMenuItem()
     headerItem.title = "Maccy"
     headerItem.view = MenuHeader().view
-
+ 
     menu.addItem(headerItem)
   }
 
@@ -196,11 +200,13 @@ class Maccy: NSObject {
     updateMenuTitle()
   }
 
+
+
   private func populateFooter() {
-    MenuFooter.allCases.map({ $0.menuItem }).forEach({ item in
+     MenuFooter.allCases.map({ $0.menuItem }).forEach({ item in
       item.action = #selector(menuItemAction)
       item.target = self
-      menu.addItem(item)
+      menuBar.addItem(item)
     })
   }
 
@@ -301,7 +307,7 @@ class Maccy: NSObject {
   }
 
   private func linkingMenuToStatusItem(_ closure: @escaping () -> Void) {
-    statusItem.menu = menu
+    statusItem.menu = menuBar
     closure()
     statusItem.menu = menuLoader
   }

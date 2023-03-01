@@ -28,3 +28,4 @@
 "key_used_error" = "Tipka se već koristi.";
 "active_screen" = "Aktivni ekran";
 "screen" = "Ekran";
+"search_no_match_result" = "No match result";

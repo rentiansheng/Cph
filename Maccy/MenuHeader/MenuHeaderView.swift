@@ -24,35 +24,45 @@ class MenuHeaderView: NSView, NSSearchFieldDelegate {
   private var eventHandler: EventHandlerRef?
 
   private lazy var customMenu: Menu? = self.enclosingMenuItem?.menu as? Menu
-  private lazy var headerHeight = UserDefaults.standard.hideSearch ? 1 : 29
+  private lazy var headerHeight = UserDefaults.standard.hideSearch ? 1 : 40
   private lazy var headerRect = NSRect(x: 0, y: 0, width: Menu.menuWidth, height: headerHeight)
 
-  override func awakeFromNib() {
-    autoresizingMask = .width
-    frame = headerRect
+  required init?(coder decoder: NSCoder) {
+    super.init(coder: decoder)
+  }
 
+  override init(frame frameRect: NSRect) {
+    super.init(frame: frameRect)
+    autoresizingMask = .width
+  }
+
+  override func awakeFromNib() {
     queryField.delegate = self
     queryField.placeholderString = NSLocalizedString("search_placeholder", comment: "")
+    queryField.font = .menuFont(ofSize: 20)
+    titleField.font = .menuFont(ofSize: 20)
+    frame = headerRect
+    autoresizingMask = .width
 
-    if #available(macOS 11, *) {
+     if #available(macOS 11, *) {
       // all good
     } else {
       horizontalLeftPadding.constant = macOSXLeftPadding
       horizontalRightPadding.constant = macOSXRightPadding
     }
 
-    if UserDefaults.standard.hideTitle {
+    //if UserDefaults.standard.hideTitle {
       titleField.isHidden = true
       removeConstraint(titleAndSearchSpacing)
-    }
+    //}
 
     if UserDefaults.standard.hideSearch {
-      constraints.forEach(removeConstraint)
+      // constraints.forEach(removeConstraint)
     }
   }
 
   override func viewDidMoveToWindow() {
-    super.viewDidMoveToWindow()
+     super.viewDidMoveToWindow()
 
     if window != nil {
       if let dispatcher = GetEventDispatcherTarget() {
@@ -88,8 +98,7 @@ class MenuHeaderView: NSView, NSSearchFieldDelegate {
 
   override func draw(_ dirtyRect: NSRect) {
     super.draw(dirtyRect)
-
-    if #available(macOS 13, *) {
+     if #available(macOS 13, *) {
       // all good
     } else {
       if NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast ||
@@ -98,8 +107,8 @@ class MenuHeaderView: NSView, NSSearchFieldDelegate {
         dirtyRect.fill()
       }
     }
-
     queryField.refusesFirstResponder = false
+
   }
 
   // Process query when search field was focused (i.e. user clicked on it).

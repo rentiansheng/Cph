@@ -28,3 +28,4 @@
 "key_used_error" = "คีย์นี้ถูกใช้แล้ว";
 "active_screen" = "หน้าจอที่ใช้งานอยู่";
 "screen" = "หน้าจอ";
+"search_no_match_result" = "No match result";

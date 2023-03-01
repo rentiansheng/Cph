@@ -2,23 +2,23 @@ import Cocoa
 
 class About {
   private let familyCredits = NSAttributedString(
-    string: "Special thank you to Tonia & Guy! ❤️",
+    string: "Special thank you to Cph(clipboard history)! ❤️",
     attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor]
   )
 
   private var kossCredits: NSMutableAttributedString {
-    let string = NSMutableAttributedString(string: "Kudos to Sasha Koss for help! 🏂",
-                                           attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor])
-    string.addAttribute(.link, value: "https://koss.nocorp.me", range: NSRange(location: 9, length: 10))
+    let string = NSMutableAttributedString(string: "document! 🏂",
+                                              attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor])
+       string.addAttribute(.link, value: "https://ireage.com/cph.html", range: NSRange(location: 0, length: 10))
     return string
   }
 
   private var links: NSMutableAttributedString {
-    let string = NSMutableAttributedString(string: "Website│GitHub│Support",
-                                           attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor])
-    string.addAttribute(.link, value: "https://maccy.app", range: NSRange(location: 0, length: 7))
-    string.addAttribute(.link, value: "https://github.com/p0deje/Maccy", range: NSRange(location: 8, length: 6))
-    string.addAttribute(.link, value: "mailto:support@maccy.app", range: NSRange(location: 15, length: 7))
+    let string = NSMutableAttributedString(string: "Website│use GitHub│Support",
+                                               attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor])
+        string.addAttribute(.link, value: "https://ireage.com", range: NSRange(location: 0, length: 7))
+        string.addAttribute(.link, value: "https://github.com/rentiansheng/Cph", range: NSRange(location: 8, length: 10))
+        string.addAttribute(.link, value: "mailto:reage521@gmail.com", range: NSRange(location: 19, length: 7))
     return string
   }
 
