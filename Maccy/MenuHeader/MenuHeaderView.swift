@@ -24,7 +24,7 @@ class MenuHeaderView: NSView, NSSearchFieldDelegate {
   private var eventHandler: EventHandlerRef?
 
   private lazy var customMenu: Menu? = self.enclosingMenuItem?.menu as? Menu
-  private lazy var headerHeight = UserDefaults.standard.hideSearch ? 1 : 40
+  private lazy var headerHeight = UserDefaults.standard.hideSearch ? 1 : 35
   private lazy var headerRect = NSRect(x: 0, y: 0, width: Menu.menuWidth, height: headerHeight)
 
   required init?(coder decoder: NSCoder) {

@@ -61,7 +61,6 @@ class Maccy: NSObject {
 
 
 
-
   override init() {
     UserDefaults.standard.register(defaults: [
       UserDefaults.Keys.imageMaxHeight: UserDefaults.Values.imageMaxHeight,
@@ -109,7 +108,8 @@ class Maccy: NSObject {
       case "center":
         if let frame = NSScreen.forPopup?.visibleFrame {
           self.linkingMenuToStatusItem {
-             self.menu.popUp(positioning: nil, at: NSRect.centered(ofSize: self.menu.size, in: frame).origin, in: nil)
+            self.menu.popUp(positioning: nil, at: NSRect.centered(ofSize: self.menu.size, in: frame).origin, in: nil)
+
           }
         }
       case "statusItem":
@@ -192,7 +192,6 @@ class Maccy: NSObject {
 
   private func populateHeader() {
     let headerItem = NSMenuItem()
-    headerItem.title = "Maccy"
     headerItem.view = MenuHeader().view
  
     menu.addItem(headerItem)
@@ -210,7 +209,7 @@ class Maccy: NSObject {
      MenuFooter.allCases.map({ $0.menuItem }).forEach({ item in
       item.action = #selector(menuItemAction)
       item.target = self
-      menuBar.addItem(item)
+       menuBar.addItem(item)
     })
   }
 

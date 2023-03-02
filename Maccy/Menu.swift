@@ -64,8 +64,6 @@ class Menu: NSMenu, NSMenuDelegate {
   private var maxMenuItems: Int { UserDefaults.standard.maxMenuItems }
   private var maxVisibleItems: Int { maxMenuItems * historyMenuItemsGroup }
 
-  private var noMatchResultMunuItem: NSMenuItem!
-
 
 
   required init(coder decoder: NSCoder) {
@@ -78,8 +76,7 @@ class Menu: NSMenu, NSMenuDelegate {
     self.clipboard = clipboard
     self.delegate = self
     self.minimumWidth = CGFloat(Menu.menuWidth)
-    self.noMatchResultMunuItem = NSMenuItem()
-  }
+   }
 
   func menuWillOpen(_ menu: NSMenu) {
     previewThrottle.minimumDelay = initialPreviewDelay
@@ -93,6 +90,7 @@ class Menu: NSMenu, NSMenuDelegate {
     previewThrottle.cancel()
     previewPopover?.close()
   }
+
 
   func menu(_ menu: NSMenu, willHighlight item: NSMenuItem?) {
     previewThrottle.cancel()
@@ -191,23 +189,23 @@ class Menu: NSMenu, NSMenuDelegate {
   }
 
   func updateFilter(filter: String) {
-    var results = search.search(string: filter, within: indexedItems)
+     var results = search.search(string: filter, within: indexedItems)
 
-    // Strip the results that are longer than visible items.
+      // Strip the results that are longer than visible items.
     if maxMenuItems > 0 && maxMenuItems < results.count {
       results = Array(results[0...maxMenuItems - 1])
     }
 
-    // Get all the items that match results.
+      // Get all the items that match results.
     let foundItems = results.map({ $0.object })
 
-    // Ensure that pinned items are visible after search is cleared.
+      // Ensure that pinned items are visible after search is cleared.
     if filter.isEmpty {
       results.append(contentsOf: indexedItems.filter({ $0.item.pin != nil })
-                                             .map({ Search.SearchResult(score: nil, object: $0, titleMatches: []) }))
+        .map({ Search.SearchResult(score: nil, object: $0, titleMatches: []) }))
     }
 
-    // First, remove items that don't match search.
+      // First, remove items that don't match search.
     for indexedItem in indexedItems {
       if !foundItems.contains(indexedItem) {
         indexedItem.menuItems.forEach(safeRemoveItem)
@@ -215,7 +213,7 @@ class Menu: NSMenu, NSMenuDelegate {
       }
     }
 
-    // Second, update order of items to match search results order.
+      // Second, update order of items to match search results order.
     for result in results.reversed() {
       let previewItem = result.object.previewMenuItem
       safeRemoveItem(previewItem)
@@ -230,19 +228,7 @@ class Menu: NSMenu, NSMenuDelegate {
 
     setKeyEquivalents(historyMenuItems)
     highlight(filter.isEmpty ? firstUnpinnedHistoryMenuItem : historyMenuItems.first)
-    // fix: 当展示的项目出现滚动条的时候，根据filter查询数据，删除字符后，
-     // 如果只有一个的项目，整个menu被折叠无法展示数据
-    if results.isEmpty    {
-      if  self.items.count == 1 {
-        noMatchResultMunuItem.title = NSLocalizedString("search_no_match_result", comment: "")
-        noMatchResultMunuItem.isEnabled = false
-        self.safeAddItem( noMatchResultMunuItem)
-      }
-
-    } else {
-      self.safeRemoveItem( noMatchResultMunuItem)
-    }
-  }
+   }
 
 
   func select(_ searchQuery: String) {
@@ -406,13 +392,17 @@ class Menu: NSMenu, NSMenuDelegate {
   }
 
   private func highlight(_ itemToHighlight: NSMenuItem?) {
-    let highlightItemSelector = NSSelectorFromString("highlightItem:")
-    if let item = itemToHighlight {
+     let highlightItemSelector = NSSelectorFromString("highlightItem:")
+     if let item = itemToHighlight {
       // we need to highlight filter menu item to force menu redrawing
       // when it has more items that can fit into the screen height
       // and scrolling items are added to the top and bottom of menu
       perform(highlightItemSelector, with: items.first)
-      if items.contains(item) {
+       print(items.count,item.menu?.items.count  );
+       if item != nil  && item.menu?.items.count == items.count {
+         return
+       }
+       if items.contains(item) {
         perform(highlightItemSelector, with: item)
       }
     } else {

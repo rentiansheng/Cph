@@ -20,9 +20,9 @@ class HistoryMenuItem: NSMenuItem {
 
   private let highlightFont: NSFont = {
     if #available(macOS 11, *) {
-      return NSFont.boldSystemFont(ofSize: 13)
+      return NSFont.boldSystemFont(ofSize: 18)
     } else {
-      return NSFont.boldSystemFont(ofSize: 14)
+      return NSFont.boldSystemFont(ofSize: 19)
     }
   }()
 
@@ -127,6 +127,7 @@ class HistoryMenuItem: NSMenuItem {
       let highlightRange = NSRange(location: range.lowerBound, length: rangeLength)
 
       attributedTitle.addAttribute(.font, value: highlightFont, range: highlightRange)
+      attributedTitle.addAttribute(.foregroundColor, value: NSColor.systemOrange, range: highlightRange)
     }
 
     self.attributedTitle = attributedTitle
